@@ -1,6 +1,6 @@
 # hydrology_common_java
 
-This is suitable for the first research training of the water Conservancy information Team in the College of Water Resources and Hydropower, Xi 'an University of Technology
+This is suitable for the java training of the water Conservancy information Team in the College of Water Resources and Hydropower, Xi 'an University of Technology
 
 ### Introduce each folder
 
