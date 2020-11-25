@@ -2,7 +2,7 @@
 
 This is suitable for the first research training of the water Conservancy information Team in the College of Water Resources and Hydropower, Xi 'an University of Technology
 
-Introduce each folder
+### Introduce each folder
 
 - datasets: Data required for relevant calculation
 
@@ -18,7 +18,7 @@ Introduce each folder
 
 - src/exercise: implementation class for the relevant calculation
 
-# Implementation Class Introduction:
+### Implementation Class Introduction:
 
 - CopForNRegulation: calculates the amount of water energy produced
 
