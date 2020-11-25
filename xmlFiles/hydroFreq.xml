@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<context>
+    <!--离散数据-->
+    <N t="1">
+        <year>1849</year>
+        <rainoff>9500</rainoff>
+    </N>
+    <N t="1">
+        <year>1870</year>
+        <rainoff>9200</rainoff>
+    </N>
+    <N t="2">
+        <year>1913</year>
+        <rainoff>6740</rainoff>
+    </N>
+    <N t="2">
+        <year>1917</year>
+        <rainoff>5000</rainoff>
+    </N>
+    <!--连续数据-->
+    <N3>
+        <fileName>F:\Tech_task\datasets\test2.xls</fileName>
+        <sheetName>sheet2</sheetName>
+    </N3>
+    <!--其他参数-->
+    <para>
+        <N1-len>122</N1-len>
+        <N2-len>58</N2-len>
+        <n-len>37</n-len>
+        <p1>3.2</p1>
+        <p2>1.7</p2>
+    </para>
+</context>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xajmode>
+    <para>
+        <F>537.0</F>
+        <varT>2.0</varT>
+        <wum>20.0</wum>
+        <wlm>75.0</wlm>
+        <wdm>80.0</wdm>
+        <K>0.65</K>
+        <C>0.11</C>
+        <b>0.3</b>
+        <SM>20.0</SM>
+        <EX>1.0</EX>
+        <KG>0.3</KG>
+        <KSS>0.41</KSS>
+        <KKG>0.99</KKG>
+        <KKSS>0.6</KKSS>
+        <wum0>0.0</wum0>
+        <wlm0>70.0</wlm0>
+        <wdm0>80.0</wdm0>
+        <FR0>0.1</FR0>
+        <S0>20.0</S0>
+        <QRSS0>40.0</QRSS0>
+        <QRG0>20.0</QRG0>
+    </para>
+    <data>
+        <Excel>F:\Tech_task\datasets\xajInit.xls</Excel>
+        <UH>UH</UH><!--sheetName-->
+        <EAndP>EAndP</EAndP><!--sheetName-->
+    </data>
+
+</xajmode>
