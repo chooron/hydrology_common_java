@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public class XajModeMain {
     public static void main(String[] args) throws DocumentException {
-        XAJmode xaJmode = getXajMode("F:\\Tech_task\\xmlFiles\\xajParaAndInit");
+        XAJmode xaJmode = getXajMode("./xmlFiles/xajParaAndInit");
         ArrayList<XajProgress> xajProgresses = xaJmode.getXajProgresses();
         ArrayList<XajProgress> progressByCount = new ArrayList<>();
         for (int i = 0; i < xajProgresses.size(); i++) {

@@ -6,7 +6,7 @@ import utils.ListUtils;
 import utils.XmlUtils;
 
 public class FloodRegulation {
-    static FloodCount floodCount = XmlUtils.readFlood("F:\\Tech_task\\xmlFiles\\floodRegulation.xml");
+    static FloodCount floodCount = XmlUtils.readFlood("./xmlFiles/floodRegulation.xml");
 
     public static void main(String[] args) {
         double[][] result = reservoirFloodCount(floodCount);
@@ -16,7 +16,7 @@ public class FloodRegulation {
             }
             System.out.println();
         }*/
-        ExcelUtils.submitFloodRegulation(result,"F:\\Tech_task\\results\\floodRegulationResult.xls");
+        ExcelUtils.submitFloodRegulation(result,"./results/floodRegulationResult.xls");
     }
 
     private static double[][] reservoirFloodCount(FloodCount floodCount) {

@@ -11,16 +11,16 @@
     <Zdead>720</Zdead>
     <relation>
         <ZV>
-            <excelName>F:\Tech_task\datasets\ExcelForCOR.xls</excelName>
+            <excelName>./datasets/ExcelForCOR.xls</excelName>
             <sheetName>sheet1</sheetName>
         </ZV>
         <QZ>
-            <excelName>F:\Tech_task\datasets\ExcelForCOR.xls</excelName>
+            <excelName>./datasets/ExcelForCOR.xls</excelName>
             <sheetName>sheet2</sheetName>
         </QZ>
     </relation>
     <Q>
-        <excelName>F:\Tech_task\datasets\ExcelForCOR.xls</excelName>
+        <excelName>./datasets/ExcelForCOR.xls</excelName>
         <sheetName>sheet3</sheetName>
     </Q>
 </context>

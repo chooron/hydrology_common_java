@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <context>
-    <runoffExcelName>F:\Tech_task\datasets\MaskingenRunoff.xls</runoffExcelName>
+    <runoffExcelName>./datasets/MaskingenRunoff.xls</runoffExcelName>
     <runoffSheet>sheet1</runoffSheet>
     <x>0.15</x>
     <K>18</K>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <result>
     <para>
-        <fileName>F:\Tech_task\datasets\test2.xls</fileName>
+        <fileName>./datasets/test2.xls</fileName>
         <sheetName>sheet1</sheetName>
         <year>2015</year>
     </para>

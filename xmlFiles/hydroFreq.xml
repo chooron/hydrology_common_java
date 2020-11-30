@@ -19,7 +19,7 @@
     </N>
     <!--连续数据-->
     <N3>
-        <fileName>F:\Tech_task\datasets\test2.xls</fileName>
+        <fileName>./datasets/test2.xls</fileName>
         <sheetName>sheet2</sheetName>
     </N3>
     <!--其他参数-->

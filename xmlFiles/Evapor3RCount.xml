@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <context>
-    <ParaExcelName>F:\Tech_task\datasets\XajModePara.xls</ParaExcelName>
+    <ParaExcelName>./datasets/XajModePara.xls</ParaExcelName>
     <ParasheetName>Sheet1</ParasheetName>
-    <EAndRDataExcelName>F:\Tech_task\datasets\EvaporRdata.xls</EAndRDataExcelName>
+    <EAndRDataExcelName>./datasets/EvaporRdata.xls</EAndRDataExcelName>
     <EAndRDatasheetName>Sheet1</EAndRDatasheetName>
     <initValue>
         <WU>0.0</WU>

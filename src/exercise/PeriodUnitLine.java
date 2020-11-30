@@ -10,7 +10,7 @@ import java.util.Calendar;
 public class PeriodUnitLine {
     public static void main(String[] args) {
         // 分析法计算
-        ArrayList<UnitLine> unitLines = XmlUtils.readForUnitLineCount("F:\\Tech_task\\xmlFiles\\unitLine.xml");
+        ArrayList<UnitLine> unitLines = XmlUtils.readForUnitLineCount("./xmlFiles/unitLine.xml");
 /*        for (UnitLine unitLine : unitLines) {
             System.out.println(unitLine.getCalendar().get(Calendar.MONTH));
         }*/
@@ -77,7 +77,7 @@ public class PeriodUnitLine {
         for (int i = 0; i < counts.size(); i++) {
             System.out.println(counts.get(i));
         }
-        ExcelUtils.submitUnitLineCount(counts,"F:\\Tech_task\\results\\UnitLineCount.xls");
+        ExcelUtils.submitUnitLineCount(counts,"./results/UnitLineCount.xls");
     }
 }
 

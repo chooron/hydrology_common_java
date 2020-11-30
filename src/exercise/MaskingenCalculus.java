@@ -9,7 +9,7 @@ import java.util.Calendar;
 
 public class MaskingenCalculus {
     public static void main(String[] args) {
-        MaskingenMode maskingenMode = XmlUtils.readForMaskingenCal("F:\\Tech_task\\xmlFiles\\maskingenMode.xml");
+        MaskingenMode maskingenMode = XmlUtils.readForMaskingenCal("./xmlFiles/maskingenMode.xml");
 //        System.out.println(maskingenMode);
         // 计算时段
         Calendar calendar1 = maskingenMode.getUnitLines().get(0).getCalendar();
@@ -48,7 +48,7 @@ public class MaskingenCalculus {
             }
             System.out.println();
         }*/
-        ExcelUtils.submitMaskingenResult(counts, C0, C1, C2, maskingenMode, "F:\\Tech_task\\results\\MaskingenResult.xls");
+        ExcelUtils.submitMaskingenResult(counts, C0, C1, C2, maskingenMode, "./results/MaskingenResult.xls");
     }
 
 

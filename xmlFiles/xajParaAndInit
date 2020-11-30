@@ -24,7 +24,7 @@
         <QRG0>20.0</QRG0>
     </para>
     <data>
-        <Excel>F:\Tech_task\datasets\xajInit.xls</Excel>
+        <Excel>./datasets/xajInit.xls</Excel>
         <UH>UH</UH><!--sheetName-->
         <EAndP>EAndP</EAndP><!--sheetName-->
     </data>

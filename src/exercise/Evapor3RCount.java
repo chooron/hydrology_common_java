@@ -8,7 +8,7 @@ import utils.XmlUtils;
 import java.util.ArrayList;
 
 public class Evapor3RCount {
-    static XAJmode xaJmode = XmlUtils.getEvaporAndR("F:\\Tech_task\\xmlFiles\\Evapor3RCount.xml");
+    static XAJmode xaJmode = XmlUtils.getEvaporAndR("./xmlFiles/Evapor3RCount.xml");
 
     public static void main(String[] args) {
         ArrayList<XajProgress> xajProgresses = xaJmode.getXajProgresses();
@@ -56,6 +56,6 @@ public class Evapor3RCount {
             }
             ts.add(result.get(i).getT());
         }
-        ExcelUtils.submitEvapor3RCount(resultForExcel, ts, "F:\\Tech_task\\results\\Evapor3RResult.xls");
+        ExcelUtils.submitEvapor3RCount(resultForExcel, ts, "./results/Evapor3RResult.xls");
     }
 }

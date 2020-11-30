@@ -16,14 +16,14 @@ public class CopForNRegulation {
     static double T = 30.4 * 24 * 3600;
 
     public static void main(String[] args) {
-        ConstOut constOut = XmlUtils.readForConstOutRegu("F:\\Tech_task\\xmlFiles\\constOutRegu");
+        ConstOut constOut = XmlUtils.readForConstOutRegu("./xmlFiles/constOutRegu");
         // 三种方案进行出力计算
         double[][] result1 = positiveCalcu(constOut);
-        ExcelUtils.submitCalcuForCOR(result1, orderForMonth(getMonth_gs(constOut), 12), "F:\\Tech_task\\results\\正序求解.xls");
+        ExcelUtils.submitCalcuForCOR(result1, orderForMonth(getMonth_gs(constOut), 12), "./results/正序求解.xls");
         double[][] result2 = negativeCalcu(constOut);
-        ExcelUtils.submitCalcuForCOR(result2, orderForMonth(getMonth_gs(constOut), 12), "F:\\Tech_task\\results\\逆序求解.xls");
+        ExcelUtils.submitCalcuForCOR(result2, orderForMonth(getMonth_gs(constOut), 12), "./results/逆序求解.xls");
         double[][] result3 = zFeaturegetN(constOut);
-        ExcelUtils.submitCalcuForCOR(result3, orderForMonth(getMonth_gs(constOut), 12), "F:\\Tech_task\\results\\Z正Z死求N.xls");
+        ExcelUtils.submitCalcuForCOR(result3, orderForMonth(getMonth_gs(constOut), 12), "./results/Z正Z死求N.xls");
     }
 
     private static double[][] zFeaturegetN(ConstOut constOut) {

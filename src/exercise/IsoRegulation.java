@@ -19,7 +19,7 @@ import java.util.Map;
 public class IsoRegulation {
     public static void main(String[] args) throws IOException, BiffException {
         ArrayList<String> parrlist;
-        parrlist = XmlUtils.readXmlForIsoRegulation("F:\\Tech_task\\xmlFiles\\isoRegulation.xml");
+        parrlist = XmlUtils.readXmlForIsoRegulation("./xmlFiles/isoRegulation.xml");
         String fileName = parrlist.get(0);
         String sheetName = parrlist.get(1);
         int year = Integer.parseInt(parrlist.get(2));

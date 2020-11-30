@@ -14,7 +14,7 @@ import java.util.Map;
 public class hydroFreq {
 
     public static void main(String[] args) {
-        String xmlPath = "F:\\Tech_task\\xmlFiles\\hydroFreq.xml";
+        String xmlPath = "./xmlFiles/hydroFreq.xml";
         ArrayList<YsRainoff> ysRainoffs = XmlUtils.readForHydroFre(xmlPath);
         ArrayList<Object> paraList = XmlUtils.readForHydroFrePara(xmlPath);
         int N1 = (int) paraList.get(0);

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class RegulationStorage {
     public static void main(String[] args) {
-        ArrayList<YRainoff> yRainoffs = XmlUtils.readQcomeAndQuse("F:\\Tech_task\\xmlFiles\\QcomeAndQuse");
+        ArrayList<YRainoff> yRainoffs = XmlUtils.readQcomeAndQuse("./xmlFiles/QcomeAndQuse");
         int start = 1;
         for (int i = 0; i < yRainoffs.size(); i++) {
             if (yRainoffs.get(i).getRainoff() > yRainoffs.get(i).getWaterUse()) {
@@ -66,7 +66,7 @@ public class RegulationStorage {
             }
             System.out.println();
         }
-        ExcelUtils.submitQcomeAndQuse(result,temp,"F:\\Tech_task\\results\\QcomeAndQuseResult.xls");
+        ExcelUtils.submitQcomeAndQuse(result,temp,"./results/QcomeAndQuseResult.xls");
     }
 
 }

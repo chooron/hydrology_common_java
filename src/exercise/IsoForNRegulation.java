@@ -17,7 +17,7 @@ import java.util.Map;
 public class IsoForNRegulation {
     public static void main(String[] args) throws IOException {
         ConstOut constOut;
-        constOut = XmlUtils.readForConstOutRegu("F:\\Tech_task\\xmlFiles\\constOutRegu");
+        constOut = XmlUtils.readForConstOutRegu("./xmlFiles/constOutRegu");
         //-------------- 插值计算曲线准备 --------------
         double[][] ZV = constOut.getZV();
         double[][] QZ = constOut.getQZ();
@@ -82,7 +82,7 @@ public class IsoForNRegulation {
             answer[i][8] = constOut.getK()*answer[i][7]*answer[i][1]/10000;
         }
         //-------------- 创建表格输出结果 --------------
-        ExcelUtils.submitCalcuForCOR(answer,month_use,"F:\\Tech_task\\results\\等流量水能调节.xls");
+        ExcelUtils.submitCalcuForCOR(answer,month_use,"./results/等流量水能调节.xls");
     }
 
 

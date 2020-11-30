@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <context>
-    <QExcelName>F:\Tech_task\datasets\FloodForRegulation.xls</QExcelName>
+    <QExcelName>./datasets/FloodForRegulation.xls</QExcelName>
     <QsheetName>Sheet1</QsheetName>
-    <relationExcelName>F:\Tech_task\datasets\FloodstorageRela.xls</relationExcelName>
+    <relationExcelName>./datasets/FloodstorageRela.xls</relationExcelName>
     <relationsheetName>Sheet1</relationsheetName>
     <Zxian>38</Zxian>
 </context>
