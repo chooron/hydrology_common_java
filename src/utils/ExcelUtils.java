@@ -658,4 +658,30 @@ public class ExcelUtils {
     public static double getFreq3ForhydroFreq(double interpolation, double point, String s) {
         return 0;
     }
+
+    public static void submitForhydroFreq(ArrayList<YsRainoff> ysRainoffByorder, String excelPath) {
+        wb = new HSSFWorkbook();
+        HSSFSheet sheet = wb.createSheet("result");
+        HSSFRow row0 = sheet.createRow(0);
+        row0.createCell(0).setCellValue("序号");
+        row0.createCell(1).setCellValue("年份");
+        row0.createCell(2).setCellValue("Qm");
+        row0.createCell(3).setCellValue("经验频率(%)");
+        ArrayList<HSSFRow> rows = new ArrayList<>();
+        for (int i = 1; i < ysRainoffByorder.size() + 1; i++) {
+            rows.add(sheet.createRow(i));
+        }
+        for (int j = 0; j < ysRainoffByorder.size(); j++) {
+            rows.get(j).createCell(0).setCellValue(j+1);
+            rows.get(j).createCell(1).setCellValue(ysRainoffByorder.get(j).getYear());
+            rows.get(j).createCell(2).setCellValue(ysRainoffByorder.get(j).getRainoff());
+            rows.get(j).createCell(3).setCellValue(Double.parseDouble(String.format("%.2f", ysRainoffByorder.get(j).getFreq()*100)));
+        }
+        try {
+            wb.write(new FileOutputStream(excelPath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("上交成功");
+    }
 }

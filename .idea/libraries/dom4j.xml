@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="dom4j">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/activation-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-betwixt-0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-codec-1.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-collections4-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-compress-1.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/commons-math3-3.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/cplex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jaxb-api-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jaxb-core-2.3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jaxb-impl-2.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jenetics-4.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jgap-3.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jxl-2.6.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/poi-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/poi-ooxml-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/SparseBitSet-1.2.jar!/" />
+      <root url="file://$PROJECT_DIR$/libs/dom4j" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/libs/dom4j" recursive="false" />
+  </library>
+</component>

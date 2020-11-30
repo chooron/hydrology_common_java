@@ -36,7 +36,7 @@ public class hydroFreq {
             rainoffs.add(ysRainoff.getRainoff());
         }
         ArrayList<YsRainoff> ysRainoffByorder = new ArrayList<>();
-        System.out.println(ysRainoffs);
+//        System.out.println(ysRainoffs);
         orderForRank(ysRainoffs, rainoffs, ysRainoffByorder, avg, items, t1, t2);
         double sum1 = 0, sum2 = 0, sum3 = 0;
         for (int i = 0; i < items.get(0) - 1; i++) {
@@ -65,9 +65,15 @@ public class hydroFreq {
         }
         cv = Math.sqrt(cv / (N1 - 1));
         System.out.println("Q均值为：" + Q_avg + "," + "方差为：" + cv);
-        System.out.println(ysRainoffByorder);
+//        System.out.println(ysRainoffByorder);
+        System.out.println("序号  |  年份   |  年径流量  |  经验频率");
+        for (int i = 0; i < ysRainoffByorder.size(); i++) {
+            System.out.println(i+1+" | "+ysRainoffByorder.get(i).getYear()+" | "+ysRainoffByorder.get(i).getRainoff()+" | "+ysRainoffByorder.get(i).getFreq());
+        }
         double point = 5;
-        ArrayList<Double> freqParas = threePointForFreq(ysRainoffByorder, point);
+        // 三点法
+//        ArrayList<Double> freqParas = threePointForFreq(ysRainoffByorder, point);
+        ExcelUtils.submitForhydroFreq(ysRainoffByorder,"./results/hydroFrqResult.xls");
     }
 
     private static ArrayList<Double> threePointForFreq(ArrayList<YsRainoff> ysRainoffs, double point) {
