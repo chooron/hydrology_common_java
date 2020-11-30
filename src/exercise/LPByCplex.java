@@ -8,48 +8,43 @@ import java.util.ArrayList;
 
 
 public class LPByCplex {
-    static ConstOut constOut = XmlUtils.readForConstOutRegu("F:\\Tech_task\\constOutRegu");
+    static ConstOut constOut = XmlUtils.readForConstOutRegu("./xmlFiles/constOutRegu");
 
     public static void main(String[] args) {
 
-        double[][] count = new double[12][12];
-        ArrayList<Integer> month = new ArrayList<>(12);
-        month.add(5);
-        month.add(6);
-        month.add(7);
-        month.add(8);
-        month.add(9);
-        month.add(10);
-        month.add(11);
-        month.add(12);
-        month.add(1);
-        month.add(2);
-        month.add(3);
-        month.add(4);
-        ArrayList<Integer> month_order = month;
-        for (int i = 0; i < month.size(); i++) {
-            count[i][0] = constOut.getyRainoffs().get(month_order.get(i) - 1).getRainoff();
+        double[][] count = new double[12][11];
+        // 设置水利年起始月份
+        int month_start = 5;
+        ArrayList<Integer> month = new ArrayList<>(11);
+        for (int i = 0; i < 12; i++) {
+            if(month_start+i>12){
+                month.add(month_start+i-12);
+                continue;
+            }
+            month.add(month_start+i);
         }
-        double vmax = 26.7, vmin = 7.9, nMax = 70, nMin = 10;
-        double outqMax = 700, outqmin = 100, powerMaxq = 500;
-
+        for (int i = 0; i < month.size(); i++) {
+            count[i][0] = constOut.getyRainoffs().get(month.get(i) - 1).getRainoff();
+        }
+        double vmax = 26.7, vmin = 7.9, nMax = 170, nMin = 0;
+        double outqMax = 700, outqmin = 10, powerMaxq = 500;
+        double qOut;
         double step = 0.05;
         double[] vStates = getVstate(vmin, vmax, step);
-        System.out.println(vStates);
-        ArrayList<Double> nSum = new ArrayList<>();
         for (int i = 0; i < month.size(); i++) {
-            double wMax = 0, Nbest = 0;
-            double vbegin, vend = 0;
+            double Nbest = 0, vbegin, vend=0;
             if (i == 0) {
-                vbegin = vmax;
+                vbegin = 10;
             } else {
-                vbegin = count[i - 1][3];//随表格记得改
+                vbegin = count[i - 1][4];
             }
             double zbegin = ListUtils.getInterpolation(constOut.getZV(), vbegin, 1);
+            double funValue = Double.MIN_VALUE;
             for (int j = 0; j < vStates.length; j++) {
-                double qOut = constOut.getyRainoffs().get(month_order.get(i) - 1).getRainoff() - (vStates[i] - vbegin) * 1e8 / (constOut.getMonth()[month_order.get(i) - 1] * 86400);
+                qOut = constOut.getyRainoffs().get(month.get(i) - 1).getRainoff() - (vStates[j] - vbegin) * 1e8 / (constOut.getMonth()[month.get(i) - 1] * 86400);
                 // 出库流量约束
                 if (qOut > outqMax || qOut < outqmin) {
+//                    System.out.println("不符合标准" + qOut);
                     continue;
                 }
                 // 获取发电量
@@ -62,6 +57,9 @@ public class LPByCplex {
                     lostWater = qOut - powerMaxq;
                     System.out.println("产生弃水" + lostWater);
                 }
+                if(Math.abs(vStates[j]-vbegin)>vbegin*0.5){
+                    continue;
+                }
                 // 获取下游水位
                 double zdown = ListUtils.getInterpolation(constOut.getQZ(), qOut, 0);
                 // 获取水头
@@ -71,33 +69,37 @@ public class LPByCplex {
                 if (N > nMax || N < nMin) {
                     continue;
                 }
-                double w = N * constOut.getMonth()[month_order.get(i) - 1] / 3600 + count[i - 1][11];
-                if (w > wMax) {
-                    w = wMax;
-                    vend = vStates[j];
+                // 设置目标函数
+                double count10;
+                if (i == 0) {
+                    count10 = 0;
+                } else {
+                    count10 = count[i - 1][10];
+                }
+                double w = 0;
+                w = w + N * constOut.getMonth()[month.get(i) - 1] * 24 + count10;
+                if (w > funValue) {
+                    funValue = w;
                     Nbest = N;
+                    vend = vStates[j];
                 }
             }
-            if (i == 0) {
-                count[i][11] = wMax;
-            } else {
-                count[i][11] = count[i - 1][11] + wMax;
-            }
-            count[i][3] = vend - vbegin;
-            count[i][2] = count[i][0] - count[i][3] * 1e8 / (constOut.getMonth()[month_order.get(i) - 1] * 86400);
-            count[i][1] = count[i][0] - count[i][3] * 1e8 / (constOut.getMonth()[month_order.get(i) - 1] * 86400);
-            count[i][4] = vbegin;
-            count[i][5] = vend;
-            count[i][6] = (vbegin + vend) / 2;
-            count[i][7] = ListUtils.getInterpolation(constOut.getZV(), count[i][6], 1);
-            count[i][8] = ListUtils.getInterpolation(constOut.getQZ(), count[i][2], 0);
-            count[i][9] = count[i][8] - count[i][7] - constOut.getHlost();
-            count[i][10] = Nbest;
+            count[i][2] = vend - vbegin;
+            count[i][1] = count[i][0] - count[i][2] * 1e8 / (constOut.getMonth()[month.get(i) - 1] * 86400);
+            System.out.println(count[i][2]);
+            count[i][3] = vbegin;
+            count[i][4] = vend;
+            count[i][5] = (vbegin + vend) / 2;
+            count[i][6] = ListUtils.getInterpolation(constOut.getZV(), count[i][6], 1);
+            count[i][7] = ListUtils.getInterpolation(constOut.getQZ(), count[i][2], 0);
+            count[i][8] = count[i][7] - count[i][8] - constOut.getHlost();
+            count[i][9] = Nbest;
+            count[i][10] = funValue;
         }
 
         for (int i = 0; i < count.length; i++) {
             for (int j = 0; j < count[0].length; j++) {
-                System.out.print(count[i][j] + " ");
+                System.out.print(String.format("%.2f", count[i][j]) + " ");
             }
             System.out.println();
         }

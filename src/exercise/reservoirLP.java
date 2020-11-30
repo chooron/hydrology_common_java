@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class reservoirLP {
     // 水库优化调度对象
-    static ConstOut constOut = XmlUtils.readForConstOutRegu("F:\\Tech_task\\xmlFiles\\constOutRegu");
+    static ConstOut constOut = XmlUtils.readForConstOutRegu("./xmlFiles/constOutRegu");
     //定义集合数组来存取每个阶段的可行状态和对应收益
     static ArrayList AllValidZState[] = new ArrayList[13];
     static ArrayList AllBestProfit[] = new ArrayList[13];
